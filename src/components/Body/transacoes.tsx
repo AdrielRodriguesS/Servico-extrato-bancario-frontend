@@ -25,8 +25,18 @@ function Transacoes() {
     total += transf.valor;
   }
 
+  var dmin = "";
+  var dmax = "";  
+  if(minDate!=null){
+  dmin = minDate.toISOString().slice(0,10)
+  }  
+  if(maxDate!=null){
+    dmax = maxDate.toISOString().slice(0,10)
+  }
+
   function handleClick() {
     if (idConta != "") {
+      
       axios(`${BASE_URL}/contas/${idConta}`).then((response) => {
         setConta(response.data);
       });
@@ -35,6 +45,12 @@ function Transacoes() {
         .then((response) => {
           setTotalConta(response.data);
         });
+      axios
+      .get(`${BASE_URL}/transferencias/${idConta}?minDate=${dmin}&maxDate=${dmax}&nomeOp=${nomeOp}`)
+      .then(response => {
+        setTransferencias(response.data)
+      })
+
     } else {
       setMsg("Digite um id válido");
     }
@@ -112,6 +128,33 @@ function Transacoes() {
                 <div className="id-saldo">R$ {total}</div>
             </div>
         </div>
+
+      <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Data</th>
+              <th>Valor</th>
+              <th>Transação</th>
+              <th>Operador da Transação</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transferencias.map ((transferencia) => {
+              return (
+                <tr key={transferencia.id}>
+                  <td>{transferencia.id}</td>
+                  <td>{transferencia.dataTransferencia}</td>
+                  <td>R$ {transferencia.valor.toFixed(2)}</td>
+                  <td>{transferencia.tipoTransferencia}</td>
+                  <td>{transferencia.nomeOperadorTransacao}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

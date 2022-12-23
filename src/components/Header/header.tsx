@@ -9,7 +9,7 @@ function Header() {
           <h1>Extrato Bancario</h1>
           <p>
             Desenvolvido por
-            <a className='link' href="" target="_blank"> Adriel Rodrigues</a>
+            <a className='link' href="https://www.linkedin.com/in/adriel-rodrigues-70706551/" target="_blank"> Adriel Rodrigues</a>
           </p>
         </div>
       </header>

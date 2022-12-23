@@ -130,3 +130,36 @@ margin-bottom: 20px;
   padding: 12px;
   font-size: 18px;
 }
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table thead {
+  height: 55px;
+  font-size: 16px;
+  color: #e9e9e9;
+  font-weight: 700;
+}
+
+.table tbody {
+  font-size: 14px;
+  font-weight: 400;
+  color: #cfcfcf;
+  text-align: center;
+}
+
+.table tbody tr {
+  height: 74px;
+  border-top: 1px solid #5f6e82;
+}
+
+.table tbody tr:hover > td {
+  background-color: #384459;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #242c3b;
+}
