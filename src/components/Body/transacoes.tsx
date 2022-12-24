@@ -62,21 +62,21 @@ function Transacoes() {
       <div className="card-principal">
         <div className="campos-principais">
           <div className="nomes-campos">Id / nº da Conta</div>
-          <div>
-            <input
-              className="id-field"
-              type="text"
-              onChange={(e) => setIdConta(e.target.value)}
-              onFocus={(e) => {
-                (conta.nomeResponsavel = ""), setMsg("");
-              }}
-            ></input>
+            <div>
+              <input
+                className="id-field"
+                type="text"
+                onChange={(e) => setIdConta(e.target.value)}
+                onFocus={(e) => {
+                  (conta.nomeResponsavel = ""), setMsg("");
+                }}
+              ></input>
+            </div>
+          </div>
+          <div className="campos-principais">
+          <div className="nome-titular">{conta.nomeResponsavel}</div>
           </div>
         </div>
-        <div className="campos-principais">
-          <div className="nome-titular">{conta.nomeResponsavel}</div>
-        </div>
-      </div>
       <div className="msg">{msg}</div>
 
       <div className="card-transacoes">

@@ -9,7 +9,8 @@ function Footer() {
             <p className="footer_copy"> 
                 <a className="footer_link" href="https://github.com/AdrielRodriguesS" target="_blank">
                 <img className="img"src={github} alt="github" /></a>
-                <p className="footer_name">Adriel Rodrigues / 2022</p>
+                <a className='footer_name'
+                href="https://www.linkedin.com/in/adriel-rodrigues-70706551/" target="_blank"> Adriel Rodrigues / 2022</a>
             </p>
         </footer>
     )
